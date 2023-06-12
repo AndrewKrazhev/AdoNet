@@ -58,7 +58,7 @@ namespace AdoNet
             this.mainTableAdapter.Fill(this.baseDataSet.Main);
             if (buttonAdd.Text == "Add")
             {
-
+                // Добавляем новую строку и меняем надпись на "отмена".
                 this.mainBindingSource.AddNew();
                 buttonAdd.Text = "Cancel";
 
