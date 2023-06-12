@@ -40,8 +40,7 @@ namespace AdoNet
                     "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlgResult == DialogResult.Yes)
                 {
-                    this.mainBindingSource.RemoveCurrent();
-                    //  this.demoBaseDataSetBindingSource.RemoveAt(dataMain.CurrentCell.RowIndex);
+                    this.mainBindingSource.RemoveCurrent();                    
                     this.mainBindingSource.EndEdit();
                     this.mainTableAdapter.Update(this.baseDataSet.Main);
                 }
@@ -89,7 +88,7 @@ namespace AdoNet
                     MessageBox.Show("Запись сохранена успешно!");
                     buttonAdd.Text = "Add";
                     this.mainTableAdapter.Fill(this.baseDataSet.Main);
-                    
+
 
                 }
                 else

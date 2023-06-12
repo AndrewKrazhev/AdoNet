@@ -44,6 +44,9 @@
             this.фамилияИмяОтчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.пООDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.номерУчастникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelFIO = new System.Windows.Forms.Label();
+            this.labelPOO = new System.Windows.Forms.Label();
+            this.labelNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,6 +64,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.labelNumber);
+            this.splitContainer1.Panel1.Controls.Add(this.labelPOO);
+            this.splitContainer1.Panel1.Controls.Add(this.labelFIO);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxNumber);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxPOO);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxName);
@@ -71,8 +77,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataMain);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 266;
+            this.splitContainer1.Size = new System.Drawing.Size(932, 528);
+            this.splitContainer1.SplitterDistance = 310;
             this.splitContainer1.TabIndex = 0;
             // 
             // buttonAdd
@@ -89,15 +95,15 @@
             // 
             this.buttonUpdate.Location = new System.Drawing.Point(90, 388);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdate.Size = new System.Drawing.Size(84, 23);
             this.buttonUpdate.TabIndex = 1;
-            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.Text = "Update/Save";
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(171, 388);
+            this.buttonDelete.Location = new System.Drawing.Point(180, 388);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonDelete.TabIndex = 2;
@@ -116,7 +122,7 @@
             // textBoxPOO
             // 
             this.textBoxPOO.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mainBindingSource, "ПОО", true));
-            this.textBoxPOO.Location = new System.Drawing.Point(45, 81);
+            this.textBoxPOO.Location = new System.Drawing.Point(45, 95);
             this.textBoxPOO.Name = "textBoxPOO";
             this.textBoxPOO.Size = new System.Drawing.Size(186, 20);
             this.textBoxPOO.TabIndex = 4;
@@ -124,7 +130,7 @@
             // textBoxNumber
             // 
             this.textBoxNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mainBindingSource, "НомерУчастника", true));
-            this.textBoxNumber.Location = new System.Drawing.Point(45, 107);
+            this.textBoxNumber.Location = new System.Drawing.Point(45, 139);
             this.textBoxNumber.Name = "textBoxNumber";
             this.textBoxNumber.Size = new System.Drawing.Size(186, 20);
             this.textBoxNumber.TabIndex = 5;
@@ -142,7 +148,7 @@
             this.dataMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataMain.Location = new System.Drawing.Point(0, 0);
             this.dataMain.Name = "dataMain";
-            this.dataMain.Size = new System.Drawing.Size(530, 450);
+            this.dataMain.Size = new System.Drawing.Size(618, 528);
             this.dataMain.TabIndex = 0;
             // 
             // baseDataSet
@@ -183,11 +189,38 @@
             this.номерУчастникаDataGridViewTextBoxColumn.HeaderText = "НомерУчастника";
             this.номерУчастникаDataGridViewTextBoxColumn.Name = "номерУчастникаDataGridViewTextBoxColumn";
             // 
+            // labelFIO
+            // 
+            this.labelFIO.AutoSize = true;
+            this.labelFIO.Location = new System.Drawing.Point(12, 39);
+            this.labelFIO.Name = "labelFIO";
+            this.labelFIO.Size = new System.Drawing.Size(34, 13);
+            this.labelFIO.TabIndex = 6;
+            this.labelFIO.Text = "ФИО";
+            // 
+            // labelPOO
+            // 
+            this.labelPOO.AutoSize = true;
+            this.labelPOO.Location = new System.Drawing.Point(12, 79);
+            this.labelPOO.Name = "labelPOO";
+            this.labelPOO.Size = new System.Drawing.Size(31, 13);
+            this.labelPOO.TabIndex = 7;
+            this.labelPOO.Text = "ПОО";
+            // 
+            // labelNumber
+            // 
+            this.labelNumber.AutoSize = true;
+            this.labelNumber.Location = new System.Drawing.Point(12, 123);
+            this.labelNumber.Name = "labelNumber";
+            this.labelNumber.Size = new System.Drawing.Size(95, 13);
+            this.labelNumber.TabIndex = 8;
+            this.labelNumber.Text = "Номер участника";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(932, 528);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -220,6 +253,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn фамилияИмяОтчествоDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn пООDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn номерУчастникаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label labelNumber;
+        private System.Windows.Forms.Label labelPOO;
+        private System.Windows.Forms.Label labelFIO;
     }
 }
 
