@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -40,7 +41,7 @@ namespace AdoNet
                     "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlgResult == DialogResult.Yes)
                 {
-                    this.mainBindingSource.RemoveCurrent();                    
+                    this.mainBindingSource.RemoveCurrent();
                     this.mainBindingSource.EndEdit();
                     this.mainTableAdapter.Update(this.baseDataSet.Main);
                 }
@@ -104,3 +105,8 @@ namespace AdoNet
         }
     }
 }
+
+
+
+
+
