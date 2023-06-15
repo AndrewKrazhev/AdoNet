@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,13 @@ namespace AdoNet
 {
     public partial class Form1 : Form
     {
+        public void RefreshGrd()
+        {
+
+            this.mainTableAdapter.Update(this.baseDataSet.Main);
+            this.mainTableAdapter.Fill(this.baseDataSet.Main);
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -103,10 +111,24 @@ namespace AdoNet
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SecondForm second = new SecondForm();
+            second.ShowDialog();
+        }
+
+        public void button1_Click_1(object sender, EventArgs e)
+        {
+            SecondForm secondForm = new SecondForm();
+            secondForm.Owner = this;
+            secondForm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.mainTableAdapter.Update(this.baseDataSet.Main);
+            this.mainTableAdapter.Fill(this.baseDataSet.Main);
+        }
     }
 }
-
-
-
-
-
